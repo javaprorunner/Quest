@@ -1,5 +1,5 @@
 //
-//  QSTResModel2D.h
+//  QSTModel2D.h
 //  Quest
 //
 //  Created by Per Borgman on 26/2/10.
@@ -53,14 +53,14 @@
 }
 @end
 
-@interface QSTResModel2D : NSObject {
+@interface QSTModel2D : NSObject {
 	QSTModel2DJoint		*root;
 	NSArray				*animations;
 	
 	Vector2				*center;
 }
 
-+(QSTResModel2D*)modelWithPath:(NSURL*)modelPath resources:(QSTResourceDB*)resourceDB;
++(QSTModel2D*)modelWithPath:(NSURL*)modelPath resources:(QSTResourceDB*)resourceDB;
 
 -(id)initWithSkeleton:(NSMutableDictionary*)skel_data skin:(NSMutableDictionary*)skin_data resources:(QSTResourceDB*)resourceDB;
 

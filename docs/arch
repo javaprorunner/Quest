@@ -1,20 +1,25 @@
 
 Entity
 	
-	An object in the game. Range from timers to enemies.
-	Entities are the sum of its properties.
+	An object in the game. Ranges from timers to enemies.
+	Entities are the sum of its Properties and Components.
 	
 	
 Property
 
 	A single, simple point of data. Can be a string, number or vector.
-	Many properties make up an Entity. Are used by Systems.
+	
+	
+Component
+
+	An advanced Property. Collection of data for a specific use.
+	Has state. Uses resources. Can expose internal variables as Properties.
 
 
 System
 
 	A part of the engine with a specific area of responsibility. Works
-	with properties.
+	with Properties and Components.
 	The engine is, by and large, the sum of all the different Systems.
 	
 	

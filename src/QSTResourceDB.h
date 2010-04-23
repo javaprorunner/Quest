@@ -10,7 +10,7 @@
 
 @class QSTResTexture;
 @class QSTResSprite;
-@class QSTResModel2D;
+@class QSTModel2D;
 @class QSTCore;
 
 @interface QSTResourceDB : NSObject {
@@ -24,6 +24,6 @@
 
 -(QSTResTexture*)getTextureWithPath:(NSURL*)path;
 -(QSTResSprite*)getSpriteWithName:(NSString*)name;
--(QSTResModel2D*)getModelWithName:(NSString*)name;
+-(QSTModel2D*)getModelWithName:(NSString*)name;
 
 @end

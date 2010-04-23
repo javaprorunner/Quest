@@ -11,7 +11,7 @@
 #import "JSON.h"
 #import "QSTResTexture.h"
 #import "QSTResSprite.h"
-#import "QSTResModel2D.h"
+#import "QSTModel2D.h"
 #import "QSTCore.h"
 
 #import "QSTLog.h"
@@ -86,12 +86,12 @@
 	return sprite;
 }
 
--(QSTResModel2D*)getModelWithName:(NSString*)name {
-	QSTResModel2D *model = [models objectForKey:name];
+-(QSTModel2D*)getModelWithName:(NSString*)name {
+	QSTModel2D *model = [models objectForKey:name];
 	if(model != nil) return model;
 	
 	NSURL *modelPath = $joinUrls(core.gamePath, @"models", name);
-	model = [QSTResModel2D modelWithPath:modelPath resources:self];
+	model = [QSTModel2D modelWithPath:modelPath resources:self];
 	if(!model) {
 		Error(@"Engine", @"ResourceDB: Model not found: '%s'", [[modelPath relativeString] UTF8String]);
 		return nil;
