@@ -93,7 +93,7 @@
 	[core.graphicsSystem registerEntity:playerEntity inLayer:layer];
 	[core.physicsSystem registerEntity:playerEntity inLayer:layer];
 	
-	[core.graphicsSystem.camera follow:playerEntity withSpeed:0.0f];
+	[core.graphicsSystem.camera follow:playerEntity withSpeed:1.0f];
 	
 	// Not needed anymore
 	[core.entityDB removeEntity:playerStart];
@@ -153,8 +153,8 @@
 	
 	//pos.vectorVal.x -= 1.0f;
 	
-	[core.graphicsSystem.camera panToX:25.0f y:3.75f withSpeed:1.0f];
-	[core.graphicsSystem.camera zoomTo:2.3f withSpeed:0.4f];
+	//[core.graphicsSystem.camera panToX:25.0f y:3.75f withSpeed:1.0f];
+	//[core.graphicsSystem.camera zoomTo:2.3f withSpeed:0.4f];
 
 }
 
@@ -165,14 +165,7 @@
 
 -(void)rightStart {
 	QSTProperty *vel = [playerEntity property:@"Velocity"];
-	//QSTProperty *pos = [playerEntity property:@"Position"];
 	vel.vectorVal.x = 3.0f;
-	
-	//pos.vectorVal.x += 1.0f;
-	
-	[core.graphicsSystem.camera zoomTo:1.0f withSpeed:0.4f];
-	[core.graphicsSystem.camera follow:playerEntity withSpeed:1.0f];
-
 }
 
 -(void)rightStop {
@@ -186,7 +179,7 @@
 	//if([self hasPowerUp:@"HighJump"])
 	//	vel.vectorVal.y -= 6.0f;
 	//else
-		vel.vectorVal.y -= 6.0f;
+		vel.vectorVal.y = -6.0f;
 }
 
 -(void)shoot {

@@ -26,7 +26,7 @@
 @class QSTResTexture;
 @class QSTResourceDB;
 
-@interface QSTResSprite : NSObject {	
+@interface QSTResSprite : NSObject {
 	NSMutableDictionary	*animations;
 	
 	QSTBoundingBox	*bbox;		// Physical bbox

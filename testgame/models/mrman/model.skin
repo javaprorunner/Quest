@@ -1,0 +1,16 @@
+{
+  "skin" : [
+    {
+      "joint" : 1,
+      "sprite" : "bone"
+    },
+    {
+      "joint" : 2,
+      "sprite" : "bone"
+    },
+    {
+      "joint" : 3,
+      "sprite" : "bone"
+    }
+  ]
+}

@@ -3,6 +3,8 @@
 	"properties" : {
 		"Mass" : 1.0, 
 		"Velocity" : [0.0, 0.0],
-	 	"Acceleration" : [0.0, 0.0]
+	 	"Acceleration" : [0.0, 0.0],
+		"MaxMoveSpeed" : 1.5,
+		"MaxFallSpeed" : 2.0
 	}
 }

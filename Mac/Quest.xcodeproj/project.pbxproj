@@ -320,8 +320,31 @@
 		D85E714C113013E40005CAB5 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				D8638F2311809EB000141CB3 /* Engine */,
 				D8758FEE115AAF8D0080E61E /* Game */,
 				D81E8C9E1131EB84006994C7 /* ext */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		D85E720711303DB90005CAB5 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				D889E1081155334D005110F6 /* network */,
+				D85E720811303DCD0005CAB5 /* shortplan */,
+				D8BF13AC113AB4050006E86E /* phys */,
+				D8F174EE1145459000D7D3C3 /* comps */,
+				D889DF2F11525EB9005110F6 /* arch */,
+			);
+			name = docs;
+			path = ../docs;
+			sourceTree = SOURCE_ROOT;
+		};
+		D8638F2311809EB000141CB3 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				D8638F2411809EB600141CB3 /* Resources */,
 				D889E56311558EF8005110F6 /* QSTGame.h */,
 				D889E56411558EF8005110F6 /* QSTGame.m */,
 				D85E71E9113037B60005CAB5 /* QSTCore.h */,
@@ -344,20 +367,10 @@
 				D8BF0BFA113736050006E86E /* QSTCmpCollisionMap.m */,
 				D85E74AB1131C01B0005CAB5 /* QSTResourceDB.h */,
 				D85E74AC1131C01B0005CAB5 /* QSTResourceDB.m */,
-				D81E8CBC1131FB22006994C7 /* QSTResTexture.h */,
-				D81E8CBD1131FB22006994C7 /* QSTResTexture.m */,
-				D81E8CC811320E6E006994C7 /* QSTResTextureStrip.h */,
-				D81E8CC911320E6E006994C7 /* QSTResTextureStrip.m */,
-				D81E8CC511320E63006994C7 /* QSTResTextureAnimation.h */,
-				D81E8CC611320E63006994C7 /* QSTResTextureAnimation.m */,
-				D85E74AF1131E9C60005CAB5 /* QSTResSprite.h */,
-				D85E74B01131E9C60005CAB5 /* QSTResSprite.m */,
 				D81E8EA41133002D006994C7 /* QSTBoundingBox.h */,
 				D81E8EA51133002D006994C7 /* QSTBoundingBox.m */,
 				D81E952B11335507006994C7 /* QSTLine.h */,
 				D81E952C11335507006994C7 /* QSTLine.m */,
-				D8BF0C991137F9880006E86E /* QSTResModel2D.h */,
-				D8BF0C9A1137F9880006E86E /* QSTResModel2D.m */,
 				D8DAFB1C114E593C0064B657 /* QSTEntityDB.h */,
 				D8DAFB1D114E593C0064B657 /* QSTEntityDB.m */,
 				D8DAFA82114BF3730064B657 /* QSTPropertyDB.h */,
@@ -379,22 +392,25 @@
 				D889F5E511592D5F005110F6 /* QSTLog.h */,
 				D889F5E611592D5F005110F6 /* QSTLog.m */,
 			);
-			name = src;
-			path = ../src;
-			sourceTree = SOURCE_ROOT;
+			name = Engine;
+			sourceTree = "<group>";
 		};
-		D85E720711303DB90005CAB5 /* docs */ = {
+		D8638F2411809EB600141CB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D889E1081155334D005110F6 /* network */,
-				D85E720811303DCD0005CAB5 /* shortplan */,
-				D8BF13AC113AB4050006E86E /* phys */,
-				D8F174EE1145459000D7D3C3 /* comps */,
-				D889DF2F11525EB9005110F6 /* arch */,
+				D81E8CBC1131FB22006994C7 /* QSTResTexture.h */,
+				D81E8CBD1131FB22006994C7 /* QSTResTexture.m */,
+				D81E8CC811320E6E006994C7 /* QSTResTextureStrip.h */,
+				D81E8CC911320E6E006994C7 /* QSTResTextureStrip.m */,
+				D81E8CC511320E63006994C7 /* QSTResTextureAnimation.h */,
+				D81E8CC611320E63006994C7 /* QSTResTextureAnimation.m */,
+				D85E74AF1131E9C60005CAB5 /* QSTResSprite.h */,
+				D85E74B01131E9C60005CAB5 /* QSTResSprite.m */,
+				D8BF0C991137F9880006E86E /* QSTResModel2D.h */,
+				D8BF0C9A1137F9880006E86E /* QSTResModel2D.m */,
 			);
-			name = docs;
-			path = ../docs;
-			sourceTree = SOURCE_ROOT;
+			name = Resources;
+			sourceTree = "<group>";
 		};
 		D8758FEE115AAF8D0080E61E /* Game */ = {
 			isa = PBXGroup;

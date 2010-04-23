@@ -1,0 +1,23 @@
+{
+  "skeleton" : [
+    {
+      "position" : [0.0, 1.0],
+      "name" : "pelvis"
+    },
+    {
+      "position" : [0.0, 0.0],
+      "name" : "foot",
+      "parent" : 0
+    },
+    {
+      "position" : [0.0, 2.0],
+      "name" : "shoulder",
+      "parent" : 0
+    },
+    {
+      "position" : [2.0, 2.0],
+      "name" : "gun",
+      "parent" : 2
+    }
+  ]
+}

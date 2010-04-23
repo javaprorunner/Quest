@@ -51,14 +51,14 @@
           "animation" : "idle"
         },
         {
-          "sprite" : "ground",
+          "sprite" : "groun2",
           "position" : [5.0, 7.0],
           "rotation" : 0.0,
           "scale" : 1.0,
           "animation" : "idle"
         },
         {
-          "sprite" : "ground",
+          "sprite" : "groun2",
           "position" : [8.0, 7.0],
           "rotation" : 0.0,
           "scale" : 1.0,

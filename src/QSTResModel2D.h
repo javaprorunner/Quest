@@ -20,6 +20,7 @@
 @class QSTResSprite;
 @class Vector2;
 @class MutableVector2;
+@class QSTResourceDB;
 
 // ATTN: Tänk tvärtom
 @interface QSTModel2DJoint : NSObject {
@@ -58,5 +59,9 @@
 	
 	Vector2				*center;
 }
+
++(QSTResModel2D*)modelWithPath:(NSURL*)modelPath resources:(QSTResourceDB*)resourceDB;
+
+-(id)initWithSkeleton:(NSMutableDictionary*)skel_data skin:(NSMutableDictionary*)skin_data resources:(QSTResourceDB*)resourceDB;
 
 @end

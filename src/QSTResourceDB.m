@@ -11,6 +11,7 @@
 #import "JSON.h"
 #import "QSTResTexture.h"
 #import "QSTResSprite.h"
+#import "QSTResModel2D.h"
 #import "QSTCore.h"
 
 #import "QSTLog.h"
@@ -19,11 +20,12 @@
 @property (assign) QSTCore *core;
 @property (retain) NSMutableDictionary *textures;
 @property (retain) NSMutableDictionary *sprites;
+@property (retain) NSMutableDictionary *models;
 @end
 
 
 @implementation QSTResourceDB
-@synthesize core, textures, sprites;
+@synthesize core, textures, sprites, models;
 
 -(id)initOnCore:(QSTCore*)core_;
 {
@@ -34,12 +36,13 @@
 	self.core = core_;
 	textures = [[NSMutableDictionary alloc] init];
 	sprites = [[NSMutableDictionary alloc] init];
+	models = [[NSMutableDictionary alloc] init];
 	
 	return self;
 }
 -(void)dealloc;
 {
-	self.textures = self.sprites = nil;
+	self.textures = self.sprites = self.models = nil;
 	self.core = nil;
 	[super dealloc];
 }
@@ -83,19 +86,20 @@
 	return sprite;
 }
 
-/*
-+(QSTResEntityTemplate*)getEntityTemplateWithName:(NSString*)name {
-	printf("ResourceDB: getEntityTemplateWithName [%s]\n", [name UTF8String]);
+-(QSTResModel2D*)getModelWithName:(NSString*)name {
+	QSTResModel2D *model = [models objectForKey:name];
+	if(model != nil) return model;
 	
-	QSTResEntityTemplate *entTem = [entityTemplates objectForKey:name];
-	if(entTem != nil) { printf("Already loaded.\n"); return entTem; }
+	NSURL *modelPath = $joinUrls(core.gamePath, @"models", name);
+	model = [QSTResModel2D modelWithPath:modelPath resources:self];
+	if(!model) {
+		Error(@"Engine", @"ResourceDB: Model not found: '%s'", [[modelPath relativeString] UTF8String]);
+		return nil;
+	}
+	[models setObject:model forKey:name];
 	
-	entTem = [[QSTResEntityTemplate alloc] initWithName:name];
-	[entityTemplates setObject:entTem forKey:name];
-	[entTem release];
-	
-	return entTem;
+	return model;
 }
- */
+
 
 @end

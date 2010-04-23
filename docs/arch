@@ -1,3 +1,133 @@
+
+Entity
+	
+	An object in the game. Range from timers to enemies.
+	Entities are the sum of its properties.
+	
+	
+Property
+
+	A single, simple point of data. Can be a string, number or vector.
+	Many properties make up an Entity. Are used by Systems.
+
+
+System
+
+	A part of the engine with a specific area of responsibility. Works
+	with properties.
+	The engine is, by and large, the sum of all the different Systems.
+	
+	
+Resource
+
+	An asset that can be shared by entities. It contains no entity-specific
+	data, has no logic and is stateless. Often represents some data on disk.
+	
+	
+	
+
+Textures are resources. Sprites really shouldn't be.
+Models aren't resources for sure.
+All state should actually be in properties, but it becomes cumbersome
+with complex data, like animation for a skeletal model. In that case we
+would need to store all animation data for all joints as individual data,
+with unique keys.
+Maybe I should implement real components... Collections of properties that
+belong together in an ordered manner. See properties as a tree, not flat.
+
+"External" data visible through properties. "Internal" stored in some other way.
+E.g animation name and frame is exposed, but internal lerp data, etc, is not.
+
+{ 
+  "position" : [0.0, 1.0],
+  "name" : "foo",
+  "model(worm)" : {
+    "animation" : "idle",
+    "frame" : "0",
+    "fps" : "15.0"
+  },
+  "model(lasse)" : {
+    ...
+  }
+}
+
+Hm, doesn't work if you want 2 worms.
+ALT:
+
+"models" : {
+  "worm" : {
+    "animation" : "jump",
+    "frame" : "1"
+  },
+  "lasse" {
+    ...
+  }
+}
+
+Make above an array instead and you can have multiple worms.
+Drawback: Not as generic, more complex loading code.
+Let different systems load what they are good at loading,
+load rest generically.
+ModelSystem knows about "models", loads everything.
+
+
+
+Model actually encompasses more data that is hidden: The skeleton hierarchy,
+with its joints and bones and their animation state.
+Should be able to query this data too, as properties!
+
+QSTPropery *frame = getProperty("model/worm/frame");	// Something like that
+frame.intVal += 2;
+
+QSTProperty *gunPos = [entity property:@"model/worm/joints/gun/position"];
+
+QSTModel2D *model = [entity model:@"worm"];						// <-- NOOO :(
+QSTModel2D *model = (QSTModel2D*)[entity component:@"worm"];	// Better.
+
+QSTModel2DJoint *gun = [model jointWithName:@"gun"];
+
+
+
+
+
+
+Helt nya tankar!
+
+EXTREMT modulärt. (fast jag tänker fortfarande fokusera på 2D-äventyrsspel i första hand).
+
+Motorn består av ett antal System.
+Systemen registrerar entities efter egna krav.
+De arbetar sedan på properties i entitiesen.
+
+Systemen kan kodas i objc eller [scriptspråk]. De laddas dynamiskt av motorn
+utifrån något form av manifest.
+
+PhysicsSystem är t.ex inget som behövs i 100World, eller så behövs det ett annat slags.
+GraphicsSystem kan också bytas ut om man behöver 3D-grafik t.ex.
+
+Varje system har ett eget sätt att hålla reda på entities.
+
+
+Spelladdarkod är också unikt för olika speltyper. 100World genererar t.ex en värld.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Koncept, tankar och idéer:
 
 Quest är en 2D-äventyrsspelmotor.

@@ -10,17 +10,20 @@
 
 @class QSTResTexture;
 @class QSTResSprite;
+@class QSTResModel2D;
 @class QSTCore;
 
 @interface QSTResourceDB : NSObject {
 	QSTCore *core;
 	NSMutableDictionary *textures;
 	NSMutableDictionary *sprites;
+	NSMutableDictionary *models;
 
 }
 -(id)initOnCore:(QSTCore*)core;
 
 -(QSTResTexture*)getTextureWithPath:(NSURL*)path;
 -(QSTResSprite*)getSpriteWithName:(NSString*)name;
+-(QSTResModel2D*)getModelWithName:(NSString*)name;
 
 @end
